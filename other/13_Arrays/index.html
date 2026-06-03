@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consume Web Service</title>
+</head>
+<body>
+
+    <h3>hello index</h3>
+
+    <p id="consume_webservice">demo</p>
+
+    <script>
+
+        const xhr = new XMLHttpRequest();
+
+        xhr.open('GET', 'http://localhost/api/index.php', true);
+
+        xhr.send();
+
+        xhr.onload = function () {
+
+            console.log(xhr.responseText);
+
+            document.querySelector('#consume_webservice').innerHTML = xhr.responseText;
+        };
+
+    </script>
+
+</body>
+</html>
